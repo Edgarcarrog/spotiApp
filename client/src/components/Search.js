@@ -2,7 +2,7 @@ import APIAxios from "../config/apiAxios";
 import serverAxios from "../config/serverAxios";
 import theme from "../styles/mui";
 import { Fragment, useEffect, useState } from "react";
-import { Button, Grid, TextField } from "@mui/material";
+import { Button, Container, Grid, TextField } from "@mui/material";
 import CardComponent from "./Card";
 import { ThemeProvider } from "@emotion/react";
 
@@ -31,7 +31,7 @@ const Search = () => {
         const response = await serverAxios.get("/");
         const token = response.data.token;
         const data = await APIAxios.get(
-          `/search?q=${word}&type=artist&limit=10`,
+          `/search?q=${word}&type=artist&limit=20`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -78,11 +78,19 @@ const Search = () => {
         {results.length === 0 ? (
           <p>No hay nada</p>
         ) : (
-          <>
-            {results.map((item) => {
-              return <CardComponent key={item.id} item={item} />;
-            })}
-          </>
+          <Container maxWidth="xl">
+            <Grid
+              container
+              spacing={1}
+              sx={{ m: 0, p: 0 }}
+              justifyContent="center"
+              alignItems="flex-end"
+            >
+              {results.map((item) => {
+                return <CardComponent key={item.id} item={item} />;
+              })}
+            </Grid>
+          </Container>
         )}
       </ThemeProvider>
     </Fragment>
