@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  text-align: center;
+  font-family: "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(19, 33, 51);
+  color: rgb(197, 213, 255);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.text-input {
+  padding: 10px;
+  margin: 10px;
+}
+
+.text-input.Mui-active {
+  color: rgb(197, 213, 255);
+  /* background-color: rgb(197, 213, 255); */
+}
