@@ -21,7 +21,6 @@ const Search = () => {
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
       search();
-      console.log(e.key);
     }
   };
 
@@ -50,8 +49,8 @@ const Search = () => {
       <ThemeProvider theme={theme}>
         <Grid
           container
-          sx={{ my: 4, mx: 0, p: 0 }}
-          spacing={1}
+          sx={{ my: 4, mx: 0, p: 0, pl: 0 }}
+          spacing={0}
           justifyContent="center"
           alignItems="flex-end"
         >
@@ -78,16 +77,22 @@ const Search = () => {
         {results.length === 0 ? (
           <p>No hay nada</p>
         ) : (
-          <Container maxWidth="xl">
+          <Container maxWidth="xl" sx={{ p: 0 }}>
             <Grid
               container
-              spacing={1}
-              sx={{ m: 0, p: 0 }}
+              spacing={0}
+              sx={{ m: 0, p: 0, pl: 0 }}
               justifyContent="center"
-              alignItems="flex-end"
+              alignItems="center"
             >
               {results.map((item) => {
-                return <CardComponent key={item.id} item={item} />;
+                return (
+                  <CardComponent
+                    key={item.id}
+                    item={item}
+                    sx={{ m: 0, p: 0, pl: 0 }}
+                  />
+                );
               })}
             </Grid>
           </Container>

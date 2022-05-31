@@ -1,14 +1,7 @@
-
-import Search from "./components/Search";
+import AppRouter from "./routers/AppRouter";
 
 function App() {
-
-  return (
-    <div className="App">
-      <h1>Spotify App</h1>
-      <Search />
-    </div>
-  );
+  return <AppRouter />;
 }
 
 export default App;
