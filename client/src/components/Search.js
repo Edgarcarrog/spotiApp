@@ -38,6 +38,7 @@ const Search = () => {
           }
         );
         setResults(data.data.artists.items);
+        console.log(data.data.artists.items);
       } catch (error) {
         console.log(error.response);
       }

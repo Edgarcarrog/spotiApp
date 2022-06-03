@@ -14,8 +14,12 @@ const Provider = ({ children }) => {
   //Dispatch para ejecutar las acciones
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const addAlbums = async (id) => {
+  const setAlbums = async (id) => {
     let data = null;
+    dispatch({
+      type: "ADD_ALBUMS",
+      payload: null,
+    });
     try {
       const response = await serverAxios.get("/");
       const token = response.data.token;
@@ -30,23 +34,23 @@ const Provider = ({ children }) => {
     }
     dispatch({
       type: "ADD_ALBUMS",
-      payload: data,
+      payload: data.data.items,
     });
   };
 
-  useEffect(() => {
-    setUser();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const setUser = async () => {};
-
+  const setArtist = (artist) => {
+    dispatch({
+      type: "SET_ARTIST",
+      payload: artist,
+    });
+  };
   return (
     <context.Provider
       value={{
         artist: state.artist,
         albums: state.albums,
-        addAlbums,
+        setAlbums,
+        setArtist,
       }}
     >
       {children}

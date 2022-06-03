@@ -10,6 +10,15 @@ body {
   color: rgb(197, 213, 255);
 }
 
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgb(197, 213, 255);
+  text-decoration: none;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -23,4 +32,9 @@ code {
 .text-input.Mui-active {
   color: rgb(197, 213, 255);
   /* background-color: rgb(197, 213, 255); */
+}
+
+.card-image {
+  background-color: none;
+  object-fit: contain;
 }

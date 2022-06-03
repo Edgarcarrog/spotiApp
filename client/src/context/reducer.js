@@ -5,7 +5,11 @@ const reducer = (state, action) => {
         ...state,
         albums: action.payload,
       };
-
+    case "SET_ARTIST":
+      return {
+        ...state,
+        artist: action.payload,
+      };
     default:
       return state;
   }
