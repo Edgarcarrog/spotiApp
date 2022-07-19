@@ -4,7 +4,7 @@ dotenv.config();
 const cors = require("cors");
 const request = require("request");
 
-const port = 5000;
+const PORT = process.env.PORT || 5000;
 
 var spotify_client_id = process.env.SPOTIFY_CLIENT_ID;
 var spotify_client_secret = process.env.SPOTIFY_CLIENT_SECRET;
@@ -38,6 +38,6 @@ app.get("/", (req, res) => {
   });
 });
 
-app.listen(port, () => {
-  console.log(`Listening at http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Listening at http://localhost:${PORT}`);
 });

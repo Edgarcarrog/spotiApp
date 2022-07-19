@@ -70,13 +70,13 @@ const Search = () => {
             />
           </Grid>
           <Grid item xs={2} sx={{ p: 0 }}>
-            <Button variant="contained" onClick={() => search()}>
+            <Button className="search-btn" variant="contained" onClick={() => search()}>
               Buscar
             </Button>
           </Grid>
         </Grid>
         {results.length === 0 ? (
-          <p>No hay nada</p>
+          null
         ) : (
           <Container maxWidth="xl" sx={{ p: 0 }}>
             <Grid

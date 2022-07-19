@@ -14,7 +14,7 @@ const AlbumsPage = () => {
     <div>
       <h2>Albums de {artist}</h2>
       {!albums ? (
-        <p>No hay nada</p>
+        null
       ) : (
         <Container maxWidth="xl" sx={{ p: 0 }}>
           <Grid

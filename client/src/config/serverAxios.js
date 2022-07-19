@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const serverAxios = axios.create({
-  baseURL: "http://localhost:5000/",
+  baseURL: "https://spotiapp-server.herokuapp.com/",
 });
 
 export default serverAxios;
